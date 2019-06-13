@@ -4,18 +4,7 @@ apicloud通知栏消息抓取模块(仅支持安卓)
 该模块可以抓取安卓端其它APP的消息通知栏内容，例如支付宝，微信等
 
 使用方法。请将目录里面的zip包上传到你的apicloud项目模块里面。在你的apicloud程序apiready方法调用即可调用，如下:
-
-<body>
-  
-  <div class="main">
-  
-    <h1>获取的内容将在以下展示:</h1>
-    
-    <div class="content"></div>
-  
-  </div>
-
-</body>
+<div class="main"><h1>获取的内容将在以下展示:</h1><div class="content"></div></div>
 
 <script type="text/javascript">
   
