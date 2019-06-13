@@ -1,0 +1,9 @@
+{
+	modules:[
+		{
+		    name:'notice',
+		    class:'com.apicloud.notice.Mnotice'
+		}
+		
+	]
+}
