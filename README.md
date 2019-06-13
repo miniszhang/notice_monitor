@@ -4,37 +4,26 @@ apicloud通知栏消息抓取模块(仅支持安卓)
 该模块可以抓取安卓端其它APP的消息通知栏内容，例如支付宝，微信等
 
 使用方法。请将目录里面的zip包上传到你的apicloud项目模块里面。在你的apicloud程序apiready方法调用即可调用，如下:
-```<body>
-
-<div class="main"><h1>获取的内容将在以下展示:</h1><div class="content"></div></div><br>
-
+```
+<body>
+        <div class="main">
+                <h1>获取的内容将在以下展示:</h1>
+                <div class="content"></div>
+        </div>
 </body>
-<script type="text/javascript"><br>
-  
-    apiready = function() {<br>
-        
-        var getNoticeMsg = api.require('notice');<br>
-        
-        getNoticeMsg.notice(function(ret){<br>
-        
-				
-            var r = document.getElementsByClassName("content")[0];<br>
-            
-            var str = JSON.parse(ret['res']);<br>
-            
-            if (str['type'] == 'add') {<br>
-              
-              var c = "  <b>标题:</b>"+ str['title'] + "  <b>ID号:</b>"+ str['id'] + "  <b>包名:</b>"+ str['packgename'] +" <b> 时间:</b>"+ str['time'] +"  <b>内容:</b>"+ str['content'];<br>
-              
-              r.innerHTML += "<br><span>"+ c +"</span>";<br>
-            
-            }<br>
-        
-        });<br>
-    
-    };<br>
-
-</script><br>
+<script type="text/javascript">
+    apiready = function() {
+        var getNoticeMsg = api.require('notice');
+        getNoticeMsg.notice(function(ret){	
+            var r = document.getElementsByClassName("content")[0];
+            var str = JSON.parse(ret['res']);
+            if (str['type'] == 'add') {
+              var c = "  <b>标题:</b>"+ str['title'] + "  <b>ID号:</b>"+ str['id'] + "  <b>包名:</b>"+ str['packgename'] +" <b> 时间:</b>"+ str['time'] +"  <b>内容:</b>"+ str['content'];
+              r.innerHTML += "<br><span>"+ c +"</span>";
+            }
+        });
+    };
+</script>
 ```
 # 返回值
 
