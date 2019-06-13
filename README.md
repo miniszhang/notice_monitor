@@ -25,6 +25,7 @@ apicloud通知栏消息抓取模块(仅支持安卓)
         
         getNoticeMsg.notice(function(ret){
         
+				
             var r = document.getElementsByClassName("content")[0];
             
             var str = JSON.parse(ret['res']);
