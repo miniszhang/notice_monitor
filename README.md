@@ -5,7 +5,7 @@ apicloud通知栏消息抓取模块(仅支持安卓)
 
 使用方法。请将data目录里面的zip包上传到你的apicloud项目模块里面。
 ![](https://xz-ukulele.oss-cn-hangzhou.aliyuncs.com/test/1560403271%281%29.jpg)  
-然后在你的apicloud程序apiready方法调用即可调用，如下:
+然后在你的apicloud程序apiready方法里面调用notice即可，如下:
 ```
 <body>
 <div class="main">
@@ -42,4 +42,13 @@ packgename（所对应的APP包名，例如支付宝的包名是com.eg.android.A
 time(获取到通知栏消息里面的时间)
 
 content（通知栏消息里面的具体内容）
+
+# 注意事项
+
+1.在你的程序里面调用本模块后，你的APP时会提示开启监听权限，允许使用该权限后本模块才有效，并且下次将不会再提示开启监听权限。
+2.该模块有时可能出现无法获取通知消息内容的情况，重新启动多尝试几次试试（该模块没有具体优化，才会出现这种情况，我将模块源码上传到source目录下，有兴趣者你可以帮忙优化优化）。
+3.该模块仅仅用于个人学习，禁止非法监听支付宝，微信等第三方支付的到账通知来非法谋利，被追究任何问题请后果自负。
+4.该模块的实现关键点在于通过安卓的NotificationListenerService类抓取其它APP的消息通知类容，将其内容保存到一个本地文件notice.txt里面，然后监听文件的内容变化，一有变化，就先会将内容发给apicloud，然后再清空notice.txt文件。
+
+
 
