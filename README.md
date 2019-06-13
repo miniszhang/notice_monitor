@@ -46,11 +46,18 @@ apicloud通知栏消息抓取模块(仅支持安卓)
 </html>
 
 #返回值
+
 模块返回数据类型是json字符串字段，总共有6个键值:
+
 type(监听类型，当值为“add”表示通知栏有新的消息，当值为"remove"表示通知栏有消息移)
+
 id(对应的通知栏ID，可不用关心)
+
 title(通知栏消息标题)
+
 packgename（所对应的APP包名，例如支付宝的包名是com.eg.android.AlipayGphone，微信包名com.tencent.mm）
+
 time(获取到通知栏消息里面的时间)
+
 content（通知栏消息里面的具体内容）
 
