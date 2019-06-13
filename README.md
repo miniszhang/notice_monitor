@@ -18,16 +18,27 @@ apicloud通知栏消息抓取模块(仅支持安卓)
 </body>
 
 <script type="text/javascript">
+  
     apiready = function() {
+        
         var getNoticeMsg = api.require('notice');
+        
         getNoticeMsg.notice(function(ret){
+        
             var r = document.getElementsByClassName("content")[0];
+            
             var str = JSON.parse(ret['res']);
+            
             if (str['type'] == 'add') {
+              
               var c = "  <b>标题:</b>"+ str['title'] + "  <b>ID号:</b>"+ str['id'] + "  <b>包名:</b>"+ str['packgename'] +" <b> 时间:</b>"+ str['time'] +"  <b>内容:</b>"+ str['content'];
+              
               r.innerHTML += "<br><span>"+ c +"</span>";
+            
             }
+        
         });
+    
     };
 
 </script>
